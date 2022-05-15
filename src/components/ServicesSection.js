@@ -8,10 +8,14 @@ import home2 from '../img/home2.png';
 //Styles
 import {About, Description, Image} from '../styles';
 import styled from "styled-components";
+import { fade } from "../animation";
+import { useScroll } from "./useScroll";
+
 
 const ServicesSection = () => {
+    const [element, controls] = useScroll();
     return (
-        <Services>
+        <Services variants={fade} ref={element} animate={controls} initial="hidden">
             <Description>
                 <h2>High <span>quality</span> services</h2>
                 <Cards>
@@ -65,6 +69,9 @@ const Services = styled(About)`
 const Cards = styled.div`
     display: flex;
     flex-wrap: wrap;
+    @media screen and (max-width: 1300px) {
+        justify-content: center;
+    }
 `;
 
 const Card = styled.div`

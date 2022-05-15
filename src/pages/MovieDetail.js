@@ -80,6 +80,10 @@ const Awards = styled.div`
     justify-content: space-around;
     margin: 5rem 10rem;
     min-height: 80vh;
+    @media screen and (max-width: 1500px) {
+        display: block;
+        margin: 2rem 2rem;
+  }
 `;
 
 const AwardStyle = styled.div`
